@@ -11,6 +11,11 @@ type Lottery struct {
 	appSecret string
 	sinSecret string
 	appId     string
+	mods      string
+}
+
+func (l *Lottery) SetMods(mods string)  {
+    l.mods = mods
 }
 
 //大乐透
@@ -156,12 +161,12 @@ func (l *Lottery) JcMatchOdds(sportNo string, poolNo string) (err error, res pas
 
 //解析公共数据
 func (l *Lottery) lotCommon(param map[string]string, api string, lotter paser.Paser) (error, interface{}) {
-	var client *Client = NewClient(l.appSecret, l.sinSecret, l.appId)
+	var client *Client = NewClient(l.appSecret, l.sinSecret, l.appId,l.mods)
 	body, err := client.doPostJson(param, api)
 	if err != nil {
 		return err, nil
 	}
-	
+
 	err = json.Unmarshal(body, lotter)
 	if err != nil {
 		return err, nil
