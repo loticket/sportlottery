@@ -75,7 +75,7 @@ type PlsResult struct {
 	PoolBalance             float64   `json:"poolBalance"`       //本期开奖后奖池余额，单位：元。
 	PrizeAmountSum          float64   `json:"prizeAmountSum"`   //应派奖金总计, 单位：元。
 	TotalSaleAmount         float64   `json:"totalSaleAmount"`   //全国本期投注总额
-	provincePrizeAmountSum  float64   `json:"provincePrizeAmountSum"` //本省应派奖金总计，单位：元。
+	ProvincePrizeAmountSum  float64   `json:"provincePrizeAmountSum"` //本省应派奖金总计，单位：元。
 	ProvinceSaleAmount      float64   `json:"provinceSaleAmount"`   //本省本期投注总额, 单位：元。
 	PrizeStat              []PlsPrizeStat  `json:"prizeStat"`
 }
