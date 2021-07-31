@@ -11,6 +11,7 @@ type Client struct {
 	appSecret string
 	sinSecret string
 	appId     string
+	Mods      string
 	Httpclient *httpclient.HttpClient
 }
 
@@ -26,7 +27,13 @@ func  (c *Client) doPostJson(param map[string]string,apiUrl string) ([]byte,erro
        return nil,err
 	}
 
-	var postUrl string = fmt.Sprintf("%s%s/%s/",BaseUrlDev,apiUrl,VARSION)
+	var baseUrl string = BaseUrl
+	if c.Mods == "dev" {
+		baseUrl = BaseUrlDev
+	}
+
+
+	var postUrl string = fmt.Sprintf("%s%s/%s/",baseUrl,apiUrl,VARSION)
 
     req,errs := c.Httpclient.WithHeaders(c.header()).WithOption(httpclient.OPT_TIMEOUT, 4).PostJson(postUrl,bodyStr)
     if errs != nil {
@@ -54,11 +61,12 @@ func (c *Client) header () map[string]string {
 	}
 }
 
-func NewClient(appSecret string,sinSecret string,appId string) *Client {
+func NewClient(appSecret string,sinSecret string,appId string,mods string) *Client {
 	return &Client{
 		appSecret:appSecret,
 		sinSecret:sinSecret,
 		appId:appId,
+		Mods: mods,
 		Httpclient: httpclient.NewHttpClient(),
 	}
 }
