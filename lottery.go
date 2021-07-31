@@ -159,7 +159,7 @@ func  (l *Lottery) lotCommon(param map[string]string,api string,lotter paser.Pas
 		return err,nil
 	}
 
-	fmt.Println(string(body))
+	//fmt.Println(string(body))
 
 	err = json.Unmarshal(body,lotter)
 	if err != nil {
