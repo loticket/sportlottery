@@ -3,7 +3,7 @@ package sportlottery
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
+	//"fmt"
 	"github.com/loticket/sportlottery/paser"
 )
 
