@@ -7,6 +7,7 @@ import (
 
 func TestSum(t *testing.T)  {
 	client := NewLottery("7f56bbec939e","1f41f1a672cc","430003")
+	client.SetMods("pro")
 	err,fff := client.Dlt("21069")
 	if err != nil {
 		fmt.Println(err)

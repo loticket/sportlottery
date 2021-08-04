@@ -2,7 +2,7 @@ package sportlottery
 
 
 const(
-	BaseUrl = "https://openapi.lottery-sports.com:8443/gw"
+	BaseUrl = "https://openapi.lottery-sports.com:8443/gw/"
 	BaseUrlDev = "https://openapi.lottery-dev.com/gw/"
 	VARSION = "1.0.0"
 )
