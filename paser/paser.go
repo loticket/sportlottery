@@ -21,7 +21,7 @@ type LotteryContent struct {
 type LevelPrize struct {
 	PriovinceName string `json:"priovinceName"`  //省份名
 	FirstLevelStakeCount int `json:"firstLevelStakeCount"` //一等奖基本中奖注数
-	FirstLevelAddStakeCount int `json:"first_level_add_stake_count"` //一等奖追加中奖注数
+	FirstLevelAddStakeCount int `json:"firstLevelAddStakeCount"` //一等奖追加中奖注数
 }
 
 
