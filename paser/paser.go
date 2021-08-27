@@ -98,7 +98,7 @@ type NextPromotion struct {
 type PromotionInfo struct {
 	Validate      int           `json:"validate"`
 	NextValidate  int           `json:"nextValidate"`
-	NextPromotion NextPromotion `json:"nextPromotion"`
+	NextPromotion []NextPromotion `json:"nextPromotion"`
 }
 
 type QxcResult struct {
